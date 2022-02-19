@@ -13,3 +13,6 @@ The project has three main aspects to make it work
 1. [[Unity Game]]
 2.  [[Quadcopters]]
 3. [[Jetson Nano]]
+
+---
+Continue to [[How to get started building your own game]]
