@@ -8,11 +8,13 @@ Although we don't expect you to have pre-reqs as a part of this project, an idea
 - A basic understanding of the Unity Game engine or any other game engine. (Or how games work)
 - An understanding of how Networks work. 
 ---
-# Overview
-The project has three main aspects to make it work
+## Onboarding
+
+---
+## Overview
+The project has two main aspects to make it work
 1. [[Unity Game]]
 2.  [[Quadcopters]]
-3. [[Jetson Nano]]
 
 ---
 Continue to [[How to get started building your own game]]

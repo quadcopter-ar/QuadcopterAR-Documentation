@@ -1,5 +1,7 @@
 ## This Repo contains all the documentation relating to the Quadcopter AR Project I highly advise you to read this page first and then go to the Getting Started folder.
 
+# If you are interested in working on this project please contact [Professor Nelson Max](mailto:max@cs.ucdavis.edu) 
+
 If you are to work on a game, any information that is needed to that game must be stored under
 `./Games/<GameName>/...`
 
