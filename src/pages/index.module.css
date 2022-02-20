@@ -22,3 +22,16 @@
   align-items: center;
   justify-content: center;
 }
+
+.imageBackground {
+  background: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+[data-theme='dark'] .imageBackground {
+  background: none;
+  border-radius: 20px;
+  padding: 10px;
+}
+

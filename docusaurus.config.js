@@ -57,14 +57,13 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/quadcopter-ar/QuadcopterAR-Documentation',
+            href: 'https://github.com/quadcopter-ar',
             label: 'GitHub',
             position: 'right',
           },
         ],
       },
       footer: {
-        style: 'dark',
         links: [
           {
             title: 'Docs',
@@ -93,7 +92,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/quadcopter-ar/QuadcopterAR-Documentation',
+                href: 'https://github.com/quadcopter-ar/',
               },
             ],
           },

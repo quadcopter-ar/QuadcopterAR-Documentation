@@ -5,52 +5,49 @@ import styles from './HomepageFeatures.module.css';
 
 type FeatureItem = {
   title: string;
-  image: string;
+  image?: string;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    image: '/img/undraw_docusaurus_mountain.svg',
+    title: 'Who are we?',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        A group of graduate and undergraduate students working at the University of California Davis trying to build a
+        method reality.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    image: '/img/undraw_docusaurus_tree.svg',
+    title: 'What do we do?',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Currently we are building a Quadcopter System to enable Augmented and Virtual reality gameplay with
+        games designed by us
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    image: '/img/undraw_docusaurus_react.svg',
+    title: 'How do I get started?',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Get in touch with <a href="mailto:max@cs.ucdavis.edu">Professor Nelson Max</a>. While you're at it, go ahead
+        and read our <a href="docs/getting-started/welcome">Getting Started </a> to learn more
       </>
     ),
   },
 ];
 
-function Feature({title, image, description}: FeatureItem) {
+function Feature({ title, image, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <img
+        {image && <img
           className={styles.featureSvg}
           alt={title}
           src={useBaseUrl(image)}
-        />
+        />}
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
