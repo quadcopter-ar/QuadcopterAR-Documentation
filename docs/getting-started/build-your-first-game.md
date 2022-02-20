@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # How to get started building your own game
 
-You should now be familiar with the [Game System](system-overview#game-system). If you aren't please go watch some of the videos in that page to better understand what is going on.
+You should now be familiar with the [Game System](system-overview/game-system). If you aren't please go watch some of the videos in that page to better understand what is going on.
 
 Alright, welcome back! Let's get our hands dirty.
 
