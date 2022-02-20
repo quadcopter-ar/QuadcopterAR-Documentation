@@ -1,15 +1,7 @@
 ---
 sidebar_position: 2
 ---
-
-# Overview
-
-The quadcopter project's subsystems can be divided into three main systems.
-- The [Game built on Unity](#game-system) and,
-- The [Drone System](#drone-system)
-- The [Drone <-> Game](#drone-to-game) connection subsystem
-
-## Game System {#game-system}
+# Game System {#game-system}
 All the games are built on the Unity Game engine. You are going to have to have the Unity Game engine installed.
 The 2020 LTS, as of this writing it is set to be [2020.3.29](unityhub://2020.3.29f1/2ff179115da0), version should work
 for our use case.
@@ -30,7 +22,7 @@ Our prefabs can be found at the [Quadcopter-Prefab](https://github.com/quadcopte
 The way we employ the use of Virtual Reality in our games is to use the
 [Unity XR System](https://docs.unity3d.com/Manual/XR.html).
 
-:::info
+:::note
 We follow the Unity XR implementation due to the fact that Oculus' VR package in Unity does not support the same
 feature parity as XR supports.
 :::
@@ -48,27 +40,10 @@ For networking multiple games together we use the [Mirror](https://github.com/vi
 
 Our games use a simple, client server protocol. However, with Mirror, the first player who loads into the game is considered as the host of the game. And therefore Player One is considered the host.
 
-:::info
-#### PUN vs Mirror
+:::tip PUN vs Mirror
 Previously we had worked on using the PUN networking engine. The reason we switched was due to the need to have an
-active internet connection when working with the PUN networking engine.
+active internet connection when working with the PUN networking engine. I suggest you continue using the Mirror engine
 :::
 
 A great resource to start understanding Mirror is the [Mirror Docs](https://mirror-networking.gitbook.io/docs/) and [Shrine](https://www.youtube.com/watch?v=8VVgIjWBXks) on YouTube. This documentation will not go into the description of how Mirror works.
 We really reccommend watching and reading these resources before getting started.
-
-## Drone System {#drone-system}
-The quadcopter unit includes the quadcopter itself, a Nvidia Jetson Nano, a Zed camera, an Intel Real Sense Camera and, a battery pack. All of these together form the quadcopter unit.
-
-The Jetson nano is a single board computer, much like a raspberry pi. It is, in a way, the brains of the [[Drone Connection subsystem]].
-
-We have two camera systems on board. The zed camera is responsible to send video data to the game to be displayed. The Real sense camera is setup to give us accurate mapping system to understand how the world looks around us.
-
-The current project uses two 3DR Solo Drones. The drones communicate to a remote control unit through their own communication protocol. The wireless controllers give access to a wifi network, usually called `xxx_Sololink`.  Any and all communication comes into the quadcopter through this wireless signal.
-
-## Drone to Game communication subsystem {#drone-to-game}
-
-The drone system consists of two main sub systems.
-1. The connection script from the game to the drone
-2. The connection scripts on the drone and the video transmission setup
-
