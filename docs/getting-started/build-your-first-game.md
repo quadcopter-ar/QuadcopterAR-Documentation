@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # How to get started building your own game
 
 You should now be familiar with the [[Unity Game]] system. If you aren't please go watch some of the videos in that page to better understand what is going on.

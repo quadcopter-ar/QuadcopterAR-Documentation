@@ -1,30 +1,41 @@
-## This Repo contains all the documentation relating to the Quadcopter AR Project I highly advise you to read this page first and then go to the Getting Started folder.
+# Website
 
-# If you are interested in working on this project please contact [Professor Nelson Max](mailto:max@cs.ucdavis.edu) 
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-If you are to work on a game, any information that is needed to that game must be stored under
-`./Games/<GameName>/...`
+### Installation
 
-If you are a graduating student please also leave any relavent contact information under 
-`./People/<Name>.md`. This is to help new people have a way to contact you incase they require understanding of your work.
+```
+$ yarn
+```
 
-## Please use markdown as the default file format to handle any documentation. If it is to submit to a group then latex works as well.
+### Local Development
 
-A tutorial on Markdown is available [here](https://guides.github.com/features/mastering-markdown/)
+```
+$ yarn start
+```
 
-## The way we manage markdown notes is through an app called [Obsidian](https://obsidian.md/)
-- The app is simple to use and, more importantly, it lets us link between different markdown notes. It basically lets us write markdown easier.
-- Make sure you also install the [Obsidian-git](obsidian://show-plugin?id=obsidian-git) Extension as it allows you to sync the files to git. To do this
-	- First download obsidian and install it.
-	- Second clone this repository onto your local machine.
-	- Add the folder to your obsidian vault
-		![](./images/obsidian-start-page.jpg)
-		- Once the folder is added, go into the settings panel of Obsidian and enable community plugins. Here you can search and install [Obsidian-git](obsidian://show-plugin?id=obsidian-git)
-		- Now you may have to close and re-open Obsidian, then you can go back into the settings and can access the Obsidian-git settings pane.
-			- Make sure these options are set as follows:
-				- Set commit message to `updating documentation: {{date}}`
-				- Set Sync Method to `rebase`
-				- Turn on `List filenames affected by commit in commit body`
-			- Now you should restart obsidian again and should be good to go!
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-# Now, lets go to [[Introduction]]
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
