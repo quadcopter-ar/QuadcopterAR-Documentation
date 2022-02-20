@@ -16,12 +16,12 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--info button--lg margin-horiz--xs"
-            to="/docs/intro">
+            to="/docs/getting-started/welcome">
             Learn more
           </Link>
           <Link
             className="button button--secondary button--lg margin-horiz--xs"
-            to="/docs/intro">
+            to="/docs/getting-started/welcome">
             Documentation
           </Link>
         </div>
