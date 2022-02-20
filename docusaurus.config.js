@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'XR Labs',
   tagline: 'Building the future of reality @ UC Davis',
-  url: 'https://github.com/quadcopter-ar/',
+  url: 'https://quadcopter-ar.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -71,7 +71,7 @@ const config = {
             items: [
               {
                 label: 'Getting Started',
-                to: '/docs/intro',
+                to: '/docs/getting-started/welcome',
               },
             ],
           },
