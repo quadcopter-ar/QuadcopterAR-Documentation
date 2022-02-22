@@ -30,7 +30,7 @@ Starting the GUI is usually not required
 
 3. Open Unity project on PC
 :::caution
-Currently only the [Quadcopter-Pong](game-specific/quadcopter-pong) game has the ability to use the [`DroneConnection.cs`](system-overview/drone-to-game#on-the-game-side) script.
+Currently only the [Quadcopter-Pong](../game-specific-documentation/quadcopter-pong) game has the ability to use the [`DroneConnection.cs`](../getting-started/system-overview/drone-to-game#on-the-game-side) script.
 :::
 
 4. Play the game in editor

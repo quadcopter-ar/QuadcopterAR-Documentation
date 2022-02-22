@@ -8,7 +8,7 @@ title: Quadcopter Maze
 The Maze Game is currently setup as a very basic game with the Wilson Maze generation algorithm. This lets us generate
 new mazes every time the game starts.
 
-The game uses [Mirror](game-system#networking-and-multiplayer) to build the networking system for the game.
+The game uses [Mirror](../getting-started/system-overview/game-system#networking-and-multiplayer) to build the networking system for the game.
 
 ## Maze Generation
 The game is built on the Wilson’s Algorithm to generate Mazes. Each maze is a bunch of Wall objects.
@@ -31,7 +31,7 @@ You should enable either, not both
 
 ## How to run the game
 
-1. Follow the instructions on how to [connect the drone to the game](guides/connecting-drone-to-game)
+1. Follow the instructions on how to [connect the drone to the game](../guides/connecting-drone-to-game)
 2. Navigate to the “OfflineScene” scene
 3. Click start
 4. Click on “Host” button in the hud (top left) to host a game (and “Client”, on localhost, to join the game with another user)
@@ -42,7 +42,7 @@ You should now see the generated maze.
 
 This game uses two libraries besides the XR one:
 
-### [Mirror](game-system#networking-and-multiplayer): used for networking
+### [Mirror](../getting-started/system-overview/game-system#networking-and-multiplayer): used for networking
 Here are specifics regarding the Maze game
 - The main object is the network manager
 - Located in the offline scene but it has DontDestroyOnLoad so it persists between scenes
@@ -53,4 +53,4 @@ Here are specifics regarding the Maze game
 - The player objects also have the NetworkTransform component which automatically sync the position, scale, and rotation of the object to all other players
 - The Maze scene has spawn objects which dictate where the players will spawn
 
-### [ParrelSync](/docs/guides/using-parrelsync-for-games): used to make debugging networking easier
+### [ParrelSync](../guides/using-parrelsync-for-games): used to make debugging networking easier
