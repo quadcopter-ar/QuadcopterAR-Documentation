@@ -1,15 +1,7 @@
 ---
 sidebar_position: 2
 ---
-
-# Overview
-
-The quadcopter project's subsystems can be divided into three main systems.
-- The [Game built on Unity](#game-system) and,
-- The [Drone System](#drone-system)
-- The [Drone <-> Game](#drone-to-game) connection subsystem
-
-## Game System {#game-system}
+# Game System {#game-system}
 All the games are built on the Unity Game engine. You are going to have to have the Unity Game engine installed.
 The 2020 LTS, as of this writing it is set to be [2020.3.29](unityhub://2020.3.29f1/2ff179115da0), version should work
 for our use case.
@@ -17,7 +9,7 @@ for our use case.
 To use the above link, make sure the Unity Hub application is installed. If you cannot develop on your own machine
 please let someone know so we can give you access to the lab computers to work remotely.
 
-### Prefabs
+## Prefabs
 The main idea is to first understand the idea of what a [Prefab](https://docs.unity3d.com/Manual/Prefabs.html) is in
 Unity.  In essence, a prefab is a modular component that can be used across projects to create a cohesive expereince.
 Ideally we would want the prefabs to be a self hosted Unity Package that we could install onto our games. However,
@@ -26,11 +18,11 @@ the current functionality relies on having pre-written scripts and models that c
 The current system focuses on packaging the important sub-systems used across games to easily extensible Prefabs.
 Our prefabs can be found at the [Quadcopter-Prefab](https://github.com/quadcopter-ar/Quadcopter-Prefabs) repository.
 
-### Unity XR
+## Unity XR
 The way we employ the use of Virtual Reality in our games is to use the
 [Unity XR System](https://docs.unity3d.com/Manual/XR.html).
 
-:::info
+:::note
 We follow the Unity XR implementation due to the fact that Oculus' VR package in Unity does not support the same
 feature parity as XR supports.
 :::
@@ -43,32 +35,31 @@ Some useful places to learn more about Unity XR apart from the documentation are
 - [VR with Andrew](https://www.youtube.com/watch?v=ndwJHpxd9Mo&list=PLmc6GPFDyfw90Xo_T69Va6kw07qJ8nLz7) has some exceptional tutorials on how to use the Unity XR interaction toolkit
 - [Dilmer Valecillos](https://www.youtube.com/watch?v=Hnoad3DM_pA) has a wonderful video on the setup for Unity XR (This has been done for you if you use the template)
 
-### Networking and Multiplayer
+### Oculus Headsets
+We have two different types of Oculus headsets. We have the [Oculus Rift S](https://www.oculus.com/rift-s/features/) and a [Oculus Quest](https://www.oculus.com/quest/features/).
+Both of these headsets have now been discontinued from Oculus. However, they are still fully supported by the Oculus
+software.
+
+:::info
+#### Rift S vs Quest
+The Rift S is a desktop class VR headset that requires a display signal to be outputted by the machine playing the game.
+The Quest, on the other hand, is a fully feature rich VR system that runs Android and can run the games nativly on device.
+:::
+
+Although it is possible to compile our games to the Quest system (and we aim to do that in the future), currently we use
+a feature known as [Oculus Link](https://www.oculus.com/accessories/oculus-link/) which lets us plug in a USB cable
+to the Quest, thereby making the system think it is a Rift. This is currently our solution to run multiplayer games
+on two devices.
+
+## Networking and Multiplayer
 For networking multiple games together we use the [Mirror](https://github.com/vis2k/Mirror) Unity package. The Mirror package is a high level networking package that supports making multiplaying games easier.
 
 Our games use a simple, client server protocol. However, with Mirror, the first player who loads into the game is considered as the host of the game. And therefore Player One is considered the host.
 
-:::info
-#### PUN vs Mirror
+:::tip PUN vs Mirror
 Previously we had worked on using the PUN networking engine. The reason we switched was due to the need to have an
-active internet connection when working with the PUN networking engine.
+active internet connection when working with the PUN networking engine. I suggest you continue using the Mirror engine
 :::
 
 A great resource to start understanding Mirror is the [Mirror Docs](https://mirror-networking.gitbook.io/docs/) and [Shrine](https://www.youtube.com/watch?v=8VVgIjWBXks) on YouTube. This documentation will not go into the description of how Mirror works.
 We really reccommend watching and reading these resources before getting started.
-
-## Drone System {#drone-system}
-The quadcopter unit includes the quadcopter itself, a Nvidia Jetson Nano, a Zed camera, an Intel Real Sense Camera and, a battery pack. All of these together form the quadcopter unit.
-
-The Jetson nano is a single board computer, much like a raspberry pi. It is, in a way, the brains of the [[Drone Connection subsystem]].
-
-We have two camera systems on board. The zed camera is responsible to send video data to the game to be displayed. The Real sense camera is setup to give us accurate mapping system to understand how the world looks around us.
-
-The current project uses two 3DR Solo Drones. The drones communicate to a remote control unit through their own communication protocol. The wireless controllers give access to a wifi network, usually called `xxx_Sololink`.  Any and all communication comes into the quadcopter through this wireless signal.
-
-## Drone to Game communication subsystem {#drone-to-game}
-
-The drone system consists of two main sub systems.
-1. The connection script from the game to the drone
-2. The connection scripts on the drone and the video transmission setup
-
