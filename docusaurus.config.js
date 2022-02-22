@@ -27,11 +27,12 @@ const config = {
           showLastUpdateTime: true,
           showLastUpdateAuthor: true
         },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            'https://github.com/quadcopter-ar/QuadcopterAR-Documentation/tree/master/',
-        },
+        blog: false,
+        // {
+        //   showReadingTime: true,
+        //   editUrl:
+        //     'https://github.com/quadcopter-ar/QuadcopterAR-Documentation/tree/master/',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -55,7 +56,7 @@ const config = {
             position: 'left',
             label: 'Getting Started',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          // { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/quadcopter-ar',
             label: 'GitHub',

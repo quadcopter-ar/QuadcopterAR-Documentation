@@ -9,7 +9,7 @@ for our use case.
 To use the above link, make sure the Unity Hub application is installed. If you cannot develop on your own machine
 please let someone know so we can give you access to the lab computers to work remotely.
 
-### Prefabs
+## Prefabs
 The main idea is to first understand the idea of what a [Prefab](https://docs.unity3d.com/Manual/Prefabs.html) is in
 Unity.  In essence, a prefab is a modular component that can be used across projects to create a cohesive expereince.
 Ideally we would want the prefabs to be a self hosted Unity Package that we could install onto our games. However,
@@ -18,7 +18,7 @@ the current functionality relies on having pre-written scripts and models that c
 The current system focuses on packaging the important sub-systems used across games to easily extensible Prefabs.
 Our prefabs can be found at the [Quadcopter-Prefab](https://github.com/quadcopter-ar/Quadcopter-Prefabs) repository.
 
-### Unity XR
+## Unity XR
 The way we employ the use of Virtual Reality in our games is to use the
 [Unity XR System](https://docs.unity3d.com/Manual/XR.html).
 
@@ -35,7 +35,23 @@ Some useful places to learn more about Unity XR apart from the documentation are
 - [VR with Andrew](https://www.youtube.com/watch?v=ndwJHpxd9Mo&list=PLmc6GPFDyfw90Xo_T69Va6kw07qJ8nLz7) has some exceptional tutorials on how to use the Unity XR interaction toolkit
 - [Dilmer Valecillos](https://www.youtube.com/watch?v=Hnoad3DM_pA) has a wonderful video on the setup for Unity XR (This has been done for you if you use the template)
 
-### Networking and Multiplayer
+### Oculus Headsets
+We have two different types of Oculus headsets. We have the [Oculus Rift S](https://www.oculus.com/rift-s/features/) and a [Oculus Quest](https://www.oculus.com/quest/features/).
+Both of these headsets have now been discontinued from Oculus. However, they are still fully supported by the Oculus
+software.
+
+:::info
+#### Rift S vs Quest
+The Rift S is a desktop class VR headset that requires a display signal to be outputted by the machine playing the game.
+The Quest, on the other hand, is a fully feature rich VR system that runs Android and can run the games nativly on device.
+:::
+
+Although it is possible to compile our games to the Quest system (and we aim to do that in the future), currently we use
+a feature known as [Oculus Link](https://www.oculus.com/accessories/oculus-link/) which lets us plug in a USB cable
+to the Quest, thereby making the system think it is a Rift. This is currently our solution to run multiplayer games
+on two devices.
+
+## Networking and Multiplayer
 For networking multiple games together we use the [Mirror](https://github.com/vis2k/Mirror) Unity package. The Mirror package is a high level networking package that supports making multiplaying games easier.
 
 Our games use a simple, client server protocol. However, with Mirror, the first player who loads into the game is considered as the host of the game. And therefore Player One is considered the host.
