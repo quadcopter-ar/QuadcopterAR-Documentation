@@ -11,6 +11,11 @@ current guideline on understanding the flow of the project and the parts.
 If you are interested in joining us and you haven't already, please reach out to [Professor Nelson Max](mailto:max@cs.ucdavis.edu).
 He will guide you on reaching out to the appropriate individual in terms joining the project and getting started.
 
+An older version of our project can be viewed [here](https://drive.google.com/file/d/1-HHOPozhRY5PVgjHw9CNeOgYKYicRlzg/view?usp=sharing)
+:::note
+This is a very old video. Much has change since then. But to have a basic understanding, please take a look
+:::
+
 ## Prerequisites
 Although we don't expect you to have pre-reqs as a part of this project, an ideal researcher would have:
 - An understanding of a programming language; C, C# and Python is what our current stack is built on.
