@@ -19,3 +19,6 @@ in the [Drone Connection subsystem](#drone-to-game).
 
 We have two camera systems on board. The Zed camera is responsible to send video data to the game to be displayed.
 The Real sense camera is setup to give us accurate mapping system to understand how the world looks around us.
+
+We are also in the process of developing a new battery to deal with the requirements of the Zed 2 and T265 Intel Real Sense Cameras on the
+Nvidia Jetson Nano. This new battery will be a 5v and 4a power supply outputing from a DC power jack.
