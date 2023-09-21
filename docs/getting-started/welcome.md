@@ -28,6 +28,6 @@ We are glad you want to start with us. Please look through the rest of the Getti
 [Benjamin Chen](mailto:bcgchen@ucdavis.edu) and we would be glad
 to help.
 
-We also have meetings every week on Monday at Academic Surge Room 2306 at 3pm. We would be very glad to have you there.
+We also have meetings every week on Monday at Academic Surge Room 2306 at 7pm. We would be very glad to have you there.
 
 Welcome to the Team!
