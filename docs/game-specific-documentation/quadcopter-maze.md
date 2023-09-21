@@ -11,23 +11,13 @@ new mazes every time the game starts.
 The game uses [Mirror](../getting-started/system-overview/game-system#networking-and-multiplayer) to build the networking system for the game.
 
 ## Maze Generation
-The game is built on the Wilson’s Algorithm to generate Mazes. Each maze is a bunch of Wall objects.
-There’s a Cell class that keeps track of which walls of a cell are there and which aren’t
-
-:::info
-There are no double walls (i.e. two adjacent cells share a single wall object; they don’t each have their own)
-:::
+The game is built on a simple DFS algorithm to generate Mazes. Each maze is a bunch of Wall objects.
 
 All the variables in the code should be straightforward, except for wallSize, wallSize should be set to the length
 of the actual Wall object (though it’s better to have the Wall object be slightly bigger so the corners of the
 maze don’t look awkward). In essence, it lets you adjust the width of the corridors in the maze.
 
 The size variables are automatically validated to be odd and the hole rows/cols are validated to be less than maze rows/cols (this is in the Validate method)
-
-### 2D vs 3D Maze
-To change the maze generation to 2D or 3D, go into the “Maze” Scene, go into the “Maze” object in that scene, and enable the appropriate script (HoleMaze or HoleMaze3D)
-You should enable either, not both
-
 
 ## How to run the game
 
