@@ -17,31 +17,12 @@ The communication system consists of two main sub systems.
 - The connection script from the game to the drone
 
 ## On the drone side
-There are two main scripts that run on the drone. [`unity_test.py`](https://github.com/quadcopter-ar/QuadcopterAR-Jetson-Nano-Unity-Bridge/blob/main/unity_test.py)
-is responsible in handling communication that it receives from unity, for example a player sending an input command,
-and sending these commands to the drone. This script is also responsible to make sure that Unity gets an updated relative positional
-data from the quadcopter.
-
-Since there is no current way to figure out where exactly the drone is, we currently send information from the game
-about positioning the drone. The drone then responds with orientation and *relative* position, from where it started.
-We use this data to then move the player around in the game world.
-
-![Drone Communicating with game](/img/getting-started/drone_communication.svg)
-
----
-The other is [`client_opencv.py`](https://github.com/quadcopter-ar/QuadcopterAR-Jetson-Nano-Unity-Bridge/blob/main/client_opencv.py).
-The role of `client_opencv` is to take any images within the ZED camera and send them over to Unity so that Unity can display
-the image internally. Rather than the game asking, the drone is always sending up to date video data from its cameras
-to the game.
-
-![Drone sending video to game](/img/getting-started/drone_video_communication.svg)
+The drone is physically paired with a companion computer, the NVIDIA Jetson Nano. The Nano is connected to 2 cameras, an Intel Realsense T265 and an ZED camera. The T265 gives our drone its current position and orientation, while the ZED relays video feed back to the Unity side. There must be 2 different cameras as the T265's video feed lacks good resolution and color (which the ZED makes up for it), and while we can perform SLAM from the ZED's data, it isn't reliable as the T265. Perhaps in the future a newer Realsense can be used which supports a high resolution video feed.
 
 ## On the game side
-The game uses [DroneConnection.cs](https://github.com/quadcopter-ar/Quadcopter-Prefabs/blob/master/Assets/Scripts/Drone%20Connection/DroneConnection.cs)
-to communicate with the drone. This script is responsible to take any inputs being made by the game and to send those inputs
-to the drone. The script also keeps track of the Drones' position and orientation. This is then also used to change the
-players orientation and position.
+During the game, transform data (position, rotation) of the virtual drone is constantly being sent from Unity to the drone. We do this by sending MAVLINK messages. These MAVLINIK messages tell the drone where to fly and what the rotation should be. Note that the user on the Unity side must be connected to his/her respective drone controller that is paired with his/her respective drone. There is a 1:1 correspondence between the position of the virtual drone with the position of the actual corresponding drone in the physical world. In other words, the designer of the game selects some positive constant which the position of the virtual drone is multiplied by; then that modified position is the position that the physical quadcopter must go to.
 
+Given the varying physical room and virtual environment sizes and that the positions that are sent to the drone are all represented in meters, the constant is useful. For example, if we have a large game environment, but we are flying in a small classroom, specifying a constant less than 1 will allow us to "fit" the environment into the classroom.
 
 It is highly suggested you understand this communication system well as this is currently where majority of the work
 is taking place.
