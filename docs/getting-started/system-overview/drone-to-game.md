@@ -8,10 +8,6 @@ The names and usage of the files listed can change. If they have changed please 
 the correct information.
 :::
 
-:::caution
-All this information is old. At the current moment we are in development to improve the existing system.
-:::
-
 The communication system consists of two main sub systems.
 - The connection scripts on the drone and the video transmission setup
 - The connection script from the game to the drone
